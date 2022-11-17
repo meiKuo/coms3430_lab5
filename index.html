@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf‐8">
+  <style>
+    #imgdiv{
+        text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="imgdiv">
+    <img id="image" src="https://cdn.glitch.global/b34a6a6e-67c4-4f39-b0c2-d5b1117fa21a/IMG_1329.JPG?v=1664749988818" width = "570" height = "300">
+  </div>
+    <b>Wave Type:</b>
+  <div class="radio_buttons">
+    <input type="radio" id="sine" name="wave" checked value="sine">
+    <label for="sine">sine</label><br>
+    <input type="radio" id="sawtooth" name="wave" value="sawtooth">
+    <label for="sawtooth">sawtooth</label><br>
+    <input type="radio" id="square" name="wave" value="square">
+    <label for="square">square</label><br>
+    <input type="radio" id="triangle" name="wave" value="triangle">
+    <label for="triangle">triangle</label><br>
+  </div>
+  </div>
+  <b><br>Synthesis Type:</b>
+  <div class="radio_buttons">
+    <input type="radio" id="nosynth" name="synth" checked value="nosynth">
+    <label for="nosynth">no synthesis</label><br>
+    <input type="radio" id="additive" name="synth" value="additive">
+    <label for="additive">additive synthesis</label><br>
+    <input type="radio" id="am" name="synth" value="am">
+    <label for="am">AM synthesis</label><br>
+    <input type="radio" id="fm" name="synth" value="fm">
+    <label for="fm">FM synthesis</label><br>
+    <input type="radio" id="lfo" name="synth" value="lfo">
+    <label for="lfo">lfo + FM synthesis</label><br>
+  </div>
+  </div>
+  <b><br>Adjust Synthesis Parameters:</b>
+  <div>
+    <form action="/action_page.php">
+      <label for="partials">additive synthesis | number of partials </label>
+      <input type="text" id="partials" name="partials"><br><br>
+      <label for="modfreq">AM or FM synthesis or lfo + FM synthesis | modulation frequency </label>
+      <input type="text" id="modfreq" name="modfreq"><br><br>
+      <label for="lfofreq">lfo + FM synthesis | lfo frequency (0-20) </label>
+      <input type="text" id="lfofreq" name="lfofreq"><br><br>
+    </form>
+    or
+    <br>
+    <br>
+    <div class="radio_buttons"></div>
+      <input type="radio" id="nosurprise" name="surprises" checked value="nosurprise">
+      <label for="nosurprise">no surprises</label><br>
+      <input type="radio" id="synthsurprise" name="surprises" value="synthsurprise">
+      <label for="synthsurprise">surprise me with a random synth after each note</label><br>
+      <input type="radio" id="wavesurprise" name="surprises" value="wavesurprise">
+      <label for="wavesurprise">surprise me with a random wave after each note</label><br>
+      <input type="radio" id="synthwavesurprise" name="surprises" value="synthwavesurprise">
+      <label for="synthwavesurprise">surprise me with a random synth and wave after each note</label><br>
+    </div>
+  </div>
+</body>
+<script src="main.js"> </script>
+
+</html>
