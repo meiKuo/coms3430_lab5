@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf‐8">
+  <title> Hello web audio </title>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@^1.0.0"></script>
+
+  <style>
+    .center {
+      padding-right: 700px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <b>Wave Type:</b>
+  <div class="radio_buttons">
+    <input type="radio" id="sine" name="wave" checked value="sine">
+    <label for="sine">sine</label><br>
+    <input type="radio" id="sawtooth" name="wave" value="sawtooth">
+    <label for="sawtooth">sawtooth</label><br>
+    <input type="radio" id="square" name="wave" value="square">
+    <label for="square">square</label><br>
+    <input type="radio" id="triangle" name="wave" value="triangle">
+    <label for="triangle">triangle</label><br>
+  </div><br>
+
+  <b>Synthesis Type:</b>
+  <div class="radio_buttons">
+    <input type="radio" id="nosynth" name="synth" checked value="nosynth">
+    <label for="nosynth">no synthesis</label><br>
+    <input type="radio" id="additive" name="synth" value="additive">
+    <label for="additive">additive synthesis</label><br>
+    <input type="radio" id="am" name="synth" value="am">
+    <label for="am">AM synthesis</label><br>
+    <input type="radio" id="fm" name="synth" value="fm">
+    <label for="fm">FM synthesis</label><br>
+  </div><br>
+
+  <button>Play</button> <br>
+
+  <br>
+  <b>Markov Chain</b> <button id="markov_button">Play</button><br>
+
+  <br>
+  <div>
+    <b>Blog Post Reflection</b>
+
+    <p class="center">
+      In lab 5 of automated composition, I had a challenging yet rewarding experience for both Part I and Part II. In
+      this blog post, I will be discussing my experience with implementing Magenta into Lab2 and also why and how I
+      implemented Markov Chain Learning to the tune of Twinkle Twinkle Little Star. <br>
+    </p>
+
+
+    <p class="center">
+      Part I was challenging in that I was unfamiliar with Magenta.js. Hence, it took me a while to understand how to
+      translate certain properties into elements within Lab2. The hardest part that I struggled with was adding the
+      offset value into the note.startTime and note.endTime. Prior to adding the offset, my oscillators were not
+      producing any notes. Another part that I was having trouble with was understanding why the oscillators in AM and
+      FM continuously played even after the melody of TWINKLE_TWINKLE had ended. To fix the issue, I had to set the gain
+      value to zero immediately after the attack.
+    </p>
+
+    <p class="center">
+      From the difficulties in Part I, I felt more comfortable with automated composition and decided to tackle Markov
+      Chain Learning. The hardest part of Markov Chain Learning was understanding how to generate the new note onto the
+      Twinkle Twinkle melody. After producing the bigrams of the notes, I used Math.random() to randomly select what
+      note should be produced next. Inspired by this <a
+        href="https://medium.com/@alexkrameris/markov-chain-implementation-in-javascript-a698f371d66f" target="_blank">post</a>, I
+      learned that by using Math.random, I can save space since
+      the random function imitates the likelihood of the pitch. Currently, my Markov Chain Learning adds one new pitch
+      onto the current Twinkle Twinkle Little Star Melody.
+    </p>
+
+
+  </div>
+
+</body>
+<script src="main.js"> </script>
+
+</html>
